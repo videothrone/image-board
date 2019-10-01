@@ -1,0 +1,289 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+h1 {
+    background-color: rgba(224, 10, 116, 0.8);
+    color: white;
+    font-weight: 900;
+}
+
+.grid-container p {
+    width: 80%;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(315px, 1fr));
+    grid-gap: 1rem;
+    /* padding: 5px; */
+}
+
+.grid-container div {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    cursor: pointer;
+    /* border: 3px double #e00a74; */
+}
+
+.grid-container img {
+    object-fit: cover;
+    /* object-position: 0 0; */
+    width: 315px;
+    height: 315px;
+    border: 3px double black;
+}
+
+.grid-container img:hover {
+    border: 3px double #e00a74;
+}
+
+#submit-main {
+    font-family: "Inconsolata", monospace;
+    padding: 10px;
+    font-size: 20px;
+    border: 3px double #e00a74;
+    width: 20%;
+    background: #e00a74;
+    margin-left: 6px;
+}
+
+#submit-main:hover {
+    background-color: black;
+    color: white;
+}
+
+#submit-main:focus {
+    outline: none;
+}
+
+.text-input {
+    font-family: "Inconsolata", monospace;
+    padding: 10px;
+    font-size: 20px;
+    border: 3px double #e00a74;
+    width: 15%;
+    background: black;
+    color: white;
+}
+
+.text-input:focus {
+    outline: none;
+}
+
+.file-submit {
+    margin-top: 15px;
+    margin-bottom: 90px;
+    display: flex;
+    justify-content: center;
+}
+
+.js .inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    max-width: 80%;
+    font-size: 1.25rem;
+    /* 20px */
+    font-weight: 700;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    padding: 0.625rem 1.25rem;
+    /* 10px 20px */
+}
+
+.no-js .inputfile + label {
+    display: none;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.inputfile + label svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: middle;
+    fill: currentColor;
+    margin-top: -0.25em;
+    /* 4px */
+    margin-right: 0.25em;
+    /* 4px */
+}
+
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+.inputfile + label {
+    color: black;
+    background-color: #e00a74;
+    border: 3px double #e00a74;
+    cursor: pointer;
+}
+
+.inputfile:focus + label,
+.inputfile.has-focus + label,
+.inputfile + label:hover {
+    background-color: black;
+    color: white;
+    border: 3px double #e00a74;
+}
+
+figure {
+    margin: 0;
+}
+
+label {
+    margin-right: 5px;
+    min-width: 18%;
+}
+
+#overlay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 999999;
+    color: black;
+    color: white;
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+}
+
+#overlay img {
+    object-fit: cover;
+    width: 550px;
+    height: 550px;
+    margin-top: 20px;
+    /* border: 3px double rgba(224, 10, 116, 0.8); */
+}
+
+#overlay .text-input {
+    font-family: "Inconsolata", monospace;
+    padding: 10px;
+    font-size: 20px;
+    border: 3px double #e00a74;
+    min-width: 30%;
+    background: black;
+    color: white;
+}
+
+#overlay .text-input:focus {
+    outline: none;
+}
+
+#submit-overlay {
+    font-family: "Inconsolata", monospace;
+    padding: 10px;
+    font-size: 20px;
+    border: 3px double #e00a74;
+    min-width: 60%;
+    background: #e00a74;
+    margin-top: 15px;
+}
+
+#submit-overlay:hover {
+    background-color: black;
+    color: white;
+}
+
+#submit-overlay:focus {
+    outline: none;
+}
+
+#x {
+    margin-top: 15px;
+    color: #e00a74;
+    cursor: pointer;
+    font-size: 35px;
+    font-family: "Inconsolata", monospace;
+    border: 3px double rgba(0, 0, 0, 0.8);
+    padding: 10px;
+}
+
+#x:hover {
+    color: white;
+    border: 3px double rgba(224, 10, 116, 0.8);
+}
+
+#overlay .underscore {
+    text-decoration: underline;
+    text-decoration-color: rgba(224, 10, 116, 0.8);
+}
+
+.username-box {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: white;
+}
+
+.comment-box {
+    padding: 10px;
+    background-color: rgba(224, 10, 116, 0.8);
+    margin: 25px;
+    font-style: oblique;
+}
+
+#more-button {
+    font-family: "Inconsolata", monospace;
+    font-size: 20px;
+    /* border-radius: 25px; */
+    padding: 10px;
+    border: 3px double #e00a74;
+    background-color: #e00a74;
+    cursor: pointer;
+    z-index: 99999;
+    margin-top: 20px;
+    min-width: 20%;
+}
+
+#more-button:hover {
+    background-color: black;
+    color: white;
+}
+
+#more-button:focus {
+    outline: none;
+}
+
+#neon-gif {
+    margin-top: 30px;
+}
+
+@media all and (min-width: 320px) and (max-width: 580px) {
+    #neon-gif {
+        max-width: 480px;
+    }
+}

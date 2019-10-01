@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imageboard</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+</head>
+<body class="center">
+    <!-- <h1>I M A G E B O A R D</h1> -->
+    <img src="neon-white.gif" id="neon-gif">
+    <div id="main">
+
+        <image-modal v-if="showModal" :id="id" @close="closeModalOnParent"></image-modal>
+        <!-- :planet=""planet" left side refers to component, right side to vue instance's data -->
+        <!-- if prop is written in camelCase (so "panetName") then the left side needs to be written in kebabcase: planet-name -->
+
+        <p><form>
+            <div>
+                <input v-model="title" type="text" name="title" placeholder="Title" autocomplete="off" class="text-input">
+                <input v-model="description" type="text" name="description" placeholder="Description" autocomplete="off" class="text-input">
+                <input v-model="username" type="text" name="username" placeholder="Name" autocomplete="off" class="text-input">
+            </div>
+            <div class="file-submit">
+                <input @change="handleChange" type="file" name="file" autocomplete="off" accept="image/*" id="img-upload" class="inputfile" data-multiple-caption="{count} files selected" multiple>
+                <label for="img-upload"><figure><svg xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17"><path d="M10 0l-5.2 4.9h3.3v5.1h3.8v-5.1h3.3l-5.2-4.9zm9.3 11.5l-3.2-2.1h-2l3.4 2.6h-3.5c-.1 0-.2.1-.2.1l-.8 2.3h-6l-.8-2.2c-.1-.1-.1-.2-.2-.2h-3.6l3.4-2.6h-2l-3.2 2.1c-.4.3-.7 1-.6 1.5l.6 3.1c.1.5.7.9 1.2.9h16.3c.6 0 1.1-.4 1.3-.9l.6-3.1c.1-.5-.2-1.2-.7-1.5z"/></svg><span> U P L O A D</span></figure></label>
+                <button @click="handleClick" id="submit-main">S U B M I T</button>
+            </div>
+        </form></p>
+        <div class="grid-container">
+            <div v-for="row in images">
+                <a :href="'#' + row.id"><img :src="row.url" :alt="row.title"></a>
+                <!-- <img :src="row.url" :alt="row.title" @click="showModalMethod(row.id)"> -->
+                <p>{{row.title}}</p>
+            </div>
+            <!-- <h2 @click="myFunction">BLAH BLAH BLAH {{name}}</h2>
+            <h2 v-on:click="myFunction">Maths! 2 * 2 = {{ 2 * 2 }}</h2>
+            <h2 v-bind:class="myClassName">Capitalize! {{name.toUpperCase()}}</h2>
+            <h3 v-if="seen" :class="myClassName">Can you see me?</h3>
+            <ul>
+                <li v-for="planet in planets" @click="myFunction(planet.name)">{{planet.name}} ,  {{planet.colour}}</li>
+            </ul> -->
+        </div>
+
+
+<button @click="getMoreImages" v-if="showMoreButton" id="more-button">M O R E</button>
+    </div><!--#main ends here-->
+
+
+
+
+
+    <!-- script tag must be outside of #main -->
+    <script id="image-modal-template" type="text/x-template">
+        <div>
+            <div @click="myClick" id="overlay">
+                <div @click="closeModal" id="x">X</div>
+                <img :src="image.url" :alt="image.title">
+                <p><span class="underscore">{{image.title}}</span> <em>{{image.description}}</em></p>
+                <p><form>
+                    <input v-model="username" type="text" name="username" placeholder="Name" autocomplete="off" class="text-input">
+                    <input v-model="comment" type="text" name="comment" placeholder="Comment" autocomplete="off" class="text-input">
+                    <button @click="submitComment" id="submit-overlay">S U B M I T</button>
+                </form></p>
+                <p><div v-for="row in comments">
+                <div class="username-box">{{row.username}}:<br> - - -</div>
+                <div class="comment-box">{{row.comment}}</div>
+
+                </div>
+                </p>
+            </div>
+        </div>
+    </script>
+    <!-- SCRIPTS -->
+    <script src="/js/vue.js"></script>
+    <script src="/js/axios.min.js"></script>
+    <script src="/js/script.js" charset="utf-8"></script>
+</body>
+</html>
