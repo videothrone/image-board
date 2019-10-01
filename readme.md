@@ -6,9 +6,9 @@
 
 ## Siteflow
 
-[![Siteflow](https://i.gyazo.com/5509ea1f8ec23fee5439cab3da0be049.gif)](https://gyazo.com/5509ea1f8ec23fee5439cab3da0be049)
+![Siteflow](https://i.gyazo.com/5509ea1f8ec23fee5439cab3da0be049.gif)
 
-[![Siteflow 2](https://i.gyazo.com/1fe96de943f4b972e341d3bef859b159.gif)](https://gyazo.com/1fe96de943f4b972e341d3bef859b159)
+![Siteflow 2](https://i.gyazo.com/1fe96de943f4b972e341d3bef859b159.gif)
 
 ## Tech
 
